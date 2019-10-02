@@ -6,9 +6,12 @@ import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
+import "../styles/index.scss";
 
-import { Navbar } from "./component/navbar";
-import { Footer } from "./component/footer";
+import { Navbar } from "./component/Navbar";
+import { Planets } from "./component/Planets";
+import { Page } from "./component/Page";
+import { Characters } from "./component/Characters";
 
 //create your first component
 export const Layout = () => {
@@ -22,12 +25,11 @@ export const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Switch>
-						<Route exact path="/" component={Home} />
-						<Route path="/demo" component={Demo} />
-						<Route path="/single/:theid" component={Single} />
+						<Route exact path="/Page" component={Page} />
+						<Route path="/Planets" component={Planets} />
+						<Route path="/Characters" component={Characters} />
 						<Route render={() => <h1>Not found!</h1>} />
 					</Switch>
-					<Footer />
 				</ScrollToTop>
 			</BrowserRouter>
 		</div>
