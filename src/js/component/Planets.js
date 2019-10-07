@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export class Planets extends React.Component {
 	render(props) {
@@ -15,6 +16,9 @@ export class Planets extends React.Component {
 					<h6 className="card-subtitle mb-2 text-muted">Name: {this.props.name}</h6>
 					<h6 className="card-subtitle mb-2 text-muted">Climate: {this.props.climate}</h6>
 					<h6 className="card-subtitle mb-2 text-muted">Terrains: {this.props.terrain}</h6>
+					<button type="button" className="btn btn-info">
+						<Link to="/Planets">More Info</Link>
+					</button>
 				</div>
 			</div>
 		);

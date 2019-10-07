@@ -50,6 +50,7 @@ export class Page extends React.Component {
 					<Navbar />
 				</div>
 				<div>
+
 					<hr className="hr-top col-lg-10 col-md-6 col-sm-6 col-xs-6 " />
 					<p className="categories">People</p>
 					<hr className="hr-bottom col-lg-10 col-md-6 col-sm-6 col-xs-6 " />
@@ -66,6 +67,7 @@ export class Page extends React.Component {
 				<div className="container">
 					<div className="row">{planet1}</div>
 				</div>
+
 			</div>
 		);
 	}

@@ -5,6 +5,8 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
+import { SinglePage } from "./views/singlePage";
+
 import injectContext from "./store/appContext";
 import "../styles/index.scss";
 
@@ -28,6 +30,7 @@ export const Layout = () => {
 						<Route exact path="/Page" component={Page} />
 						<Route path="/Planets" component={Planets} />
 						<Route path="/Characters" component={Characters} />
+						<Route exact path="/single-character/:theid/:thegender/:theeye_color" component={SinglePage} />
 						<Route render={() => <h1>Not found!</h1>} />
 					</Switch>
 				</ScrollToTop>

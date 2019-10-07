@@ -3,6 +3,7 @@ import { Navbar } from "./Navbar.js";
 import { Planets } from "./Planets.js";
 import { Characters } from "./Characters.js";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 //include images into your bundle
 
@@ -13,8 +14,18 @@ export class Page extends React.Component {
 
 		this.state = {
 			character: [],
-			planet: []
+			planet: [],
+			arr: "https://swapi.co/api/people/1/",
+			temp: ""
 		};
+	}
+	Idurl() {
+		for (var i = arr.length - 2; i >= 0; i--) {
+			if (arr[i] === "/") {
+				return parseInt(arr);
+			}
+			temp = arr[i] + temp;
+		}
 	}
 
 	componentDidMount() {
@@ -45,10 +56,7 @@ export class Page extends React.Component {
 		});
 
 		return (
-			<div className="home ">
-				<div className="navbar-brand">
-					<Navbar />
-				</div>
+			<div className="home">
 				<div>
 					<hr className="hr-top col-lg-10 col-md-6 col-sm-6 col-xs-6 " />
 					<p className="categories">People</p>
