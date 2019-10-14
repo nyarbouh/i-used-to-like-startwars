@@ -16,7 +16,7 @@ export class Characters extends React.Component {
 					<h4 className="card-subtitle mb-2 text-muted">Name: {this.props.name}</h4>
 					<h5 className="card-subtitle mb-2 text-muted">Gender: {this.props.gender}</h5>
 					<h6 className="card-subtitle mb-2 text-muted">Eye Color: {this.props.eye_color}</h6>
-					<button type="button" className="btn btn-info">
+					<button type="button" className="btn btn-info">
 						<Link
 							to={
 								"/single-character/" +
@@ -26,7 +26,7 @@ export class Characters extends React.Component {
 								"/" +
 								this.props.eye_color
 							}>
-							More Info
+							More Info
 						</Link>
 					</button>
 				</div>

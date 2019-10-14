@@ -1,8 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Consumer } from "../store/appContext.js";
 //"https://static-mh.content.disney.io/starwars/assets/navigation/sw_logo_stacked-336c62367939.png"
 
 export class Navbar extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			clicked: false
+		};
+	}
+	show = () => {
+		this.setState({ clicked: !this.state.clicked });
+	};
 	render() {
 		return (
 			<div>
@@ -48,6 +58,29 @@ export class Navbar extends React.Component {
 									</li>
 								</Link>
 							</ul>
+						</div>
+						<div className={" btn-group " + (this.state.clicked && "show")}>
+							<button
+								onClick={this.show}
+								type="button"
+								className="drop-button btn btn-secondary dropdown-toggle"
+								data-toggle="dropdown"
+								aria-haspopup="true"
+								aria-expanded="false">
+								Favorites
+							</button>
+
+							<div className={"dropdown-menu dropdown-menu-right " + (this.state.clicked && "show")}>
+								<Consumer>
+									{({ store, actions }) => {
+										return store.favorites.map((item, index) => (
+											<button key={index} className="dropdown-item" type="button">
+												{item.name}
+											</button>
+										));
+									}}
+								</Consumer>
+							</div>
 						</div>
 					</nav>
 				</div>
